@@ -32,6 +32,7 @@ $(document).ready(function() {
   $('.equal').click(function() {
     let firstValue = numArray.join('');
     let secondValue = numArray2.join('');
+    $('#current-number').val('calculating...');
     $.ajax({
       type: 'POST',
       url: '/calculate',
@@ -40,11 +41,11 @@ $(document).ready(function() {
         secondValue: secondValue,
         operator: operator
       },
-      success: function(response) {
+      success: setTimeout(function(response) {
         console.log('responded');
         console.log(response);
         answer();
-      }
+      }, 3000)
     })
   });
 

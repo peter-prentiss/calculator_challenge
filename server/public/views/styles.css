@@ -21,7 +21,7 @@ button {
   border-radius: 10px;
   border: none;
   color: white;
-  text-shadow: 2px 2px #333;
+  text-shadow: 2px 2px #333, -1px -1px 1px #333;
 }
 
 .container2 {
@@ -32,8 +32,7 @@ button {
 }
 
 .calculator {
-  background-color: gray;
-  border-radius: 15px;
+  background: linear-gradient(to bottom, rgba(76,76,76,1) 0%,rgba(255,255,255,1) 4%,rgba(22,22,22,1) 22%,rgba(17,17,17,1) 39%,rgba(17,17,17,1) 39%,rgba(44,44,44,1) 50%,rgba(71,71,71,1) 60%,rgba(71,71,71,1) 60%,rgba(43,43,43,1) 76%,rgba(28,28,28,1) 91%,rgba(255,255,255,1) 99%,rgba(255,255,255,1) 99%,rgba(19,19,19,1) 100%);  border-radius: 15px;
   padding: 20px 5px;
   box-shadow: 10px 10px rgb(64, 64, 64)
 }
@@ -44,22 +43,22 @@ button {
 }
 
 .number {
-  background-color: rgb(49, 195, 209);
-  box-shadow: 3px 3px rgb(30, 131, 138)
+  background: linear-gradient(to bottom, #00ffea, #06bdb4);
+  box-shadow: 3px 3px rgb(30, 131, 138);
 }
 
 .operator {
-  background-color: rgb(130, 52, 219);
+  background: linear-gradient(to bottom, #8234db, #841fbf);
   box-shadow: 3px 3px rgb(82, 19, 121)
 }
 
 .clear {
-  background-color: black;
+  background: linear-gradient(to bottom, #555, black);
   box-shadow: 3px 3px #444;
 }
 
 .equal {
-  background-color: rgb(245, 56, 164);
+  background: linear-gradient(to bottom, #f538a3, #bf31ac);
   box-shadow: 3px 3px rgb(126, 32, 114)
 }
 
