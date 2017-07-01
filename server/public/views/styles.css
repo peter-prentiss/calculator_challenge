@@ -1,3 +1,18 @@
+body {
+  width: 100%;
+  margin: auto;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+}
+
+.control-panel {
+  margin: 75px;
+  width: 100%;
+}
+
 .container2 button {
   width: 30px;
 }

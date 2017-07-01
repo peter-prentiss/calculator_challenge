@@ -1,5 +1,3 @@
-let firstValue;
-let secondValue;
 let operator;
 let numArray = [];
 let numArray2 = [];
@@ -22,20 +20,49 @@ $(document).ready(function() {
 
   $('.operator').click(function() {
     operator = $(this).attr('id');
+    $('#current-number').val('');
     console.log(operator);
   });
 
   $('.clear').click(function() {
-    numArray = [];
-    numArray2 = [];
-    operator = null;
-  })
+    $('#current-number').val('');
+    clear();
+  });
+
+  $('.equal').click(function() {
+    let firstValue = numArray.join('');
+    let secondValue = numArray2.join('');
+    $.ajax({
+      type: 'POST',
+      url: '/calculate',
+      data: {
+        firstValue: firstValue,
+        secondValue: secondValue,
+        operator: operator
+      },
+      success: function(response) {
+        console.log('responded');
+        console.log(response);
+        answer();
+      }
+    })
+  });
 
 });
 
+function answer() {
+  $.ajax({
+    type: 'GET',
+    url: '/calculate',
+    success: function(response) {
+      $('#current-number').val(response);
+      clear();
+    }
+  })
+}
 
-
-function setValues() {
-  numArray.push()
-
+function clear() {
+  numArray = [];
+  numArray2 = [];
+  operator = null;
 }
