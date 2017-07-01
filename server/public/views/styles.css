@@ -1,18 +1,73 @@
 body {
+  font-family: 'Rationale', sans-serif;
+  font-size: 16px;
   width: 100%;
   margin: auto;
 }
 
+h1 {
+  font-size: 2.5em;
+  background-color: black;
+  color: white;
+}
+
+button {
+  font-family: inherit;
+  font-size: 2em;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  padding-top: 5px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-shadow: 2px 2px #333;
+}
+
 .container2 {
+  margin-top: 50px;
+  text-align: center;
   display: flex;
   justify-content: center;
 }
 
+.calculator {
+  background-color: gray;
+  border-radius: 15px;
+  padding: 20px 5px;
+  box-shadow: 10px 10px rgb(64, 64, 64)
+}
+
 .control-panel {
-  margin: 75px;
+  margin: auto;
   width: 100%;
 }
 
-.container2 button {
-  width: 30px;
+.number {
+  background-color: rgb(49, 195, 209);
+  box-shadow: 3px 3px rgb(30, 131, 138)
+}
+
+.operator {
+  background-color: rgb(130, 52, 219);
+  box-shadow: 3px 3px rgb(82, 19, 121)
+}
+
+.clear {
+  background-color: black;
+  box-shadow: 3px 3px #444;
+}
+
+.equal {
+  background-color: rgb(245, 56, 164);
+  box-shadow: 3px 3px rgb(126, 32, 114)
+}
+
+#current-number {
+  width: 80%;
+  text-align: right;
+  font-size: 2em;
+  margin-bottom: 10px;
+  border: 2px solid #666;
+  border-radius: 10px;
 }

@@ -25,7 +25,7 @@ $(document).ready(function() {
   });
 
   $('.clear').click(function() {
-    $('#current-number').val('');
+    $('#current-number').val('0');
     clear();
   });
 
@@ -57,6 +57,7 @@ function answer() {
     success: function(response) {
       $('#current-number').val(response);
       clear();
+      numArray.push(response);
     }
   })
 }

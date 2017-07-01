@@ -11,8 +11,8 @@ let answer;
 
 app.post('/calculate', function(req, res) {
   let equation = req.body;
-  firstValue = parseInt(equation.firstValue);
-  secondValue = parseInt(equation.secondValue);
+  firstValue = parseFloat(equation.firstValue);
+  secondValue = parseFloat(equation.secondValue);
   operator = equation.operator;
   if (operator === "add") {
     answer = firstValue + secondValue;
