@@ -5,40 +5,52 @@
     <title>Calculator Challenge</title>
     <link rel="stylesheet" href="/views/styles.css">
     <script type="text/javascript" src="vendors/jquery.js"></script>
-    <script type="text/javascript" src="scripts/client.js"></script>
+    <!-- <script type="text/javascript" src="scripts/client.js"></script> -->
+    <script type="text/javascript" src="scripts/client2.js"></script>
   </head>
   <body>
     <h1>Calculator Challenge</h1>
-    <div class="container">
-      <input type="text" id="val1" />
+    <!-- <div class="container">
+      <input type="text" id="val1" value="0"/>
       <button type="button" class="operator" id="add">+</button>
       <button type="button" class="operator" id="subtract">-</button>
       <button type="button" class="operator" id="multiply">*</button>
       <button type="button" class="operator" id="divide">/</button>
-      <input type="text" id="val2">
+      <input type="text" id="val2" value="0">
       <button type="button" id="equals">=</button>
       <div>
         <p id="answer">
 
         </p>
+        <button type="button" id="clear">Clear</button>
       </div>
-    </div>
+    </div> -->
     <div class="container2">
+      <input type="text" id="current-number" value="0">
       <div class="numbers">
         <div class="row1">
           <button type="button" class="number">7</button>
           <button type="button" class="number">8</button>
           <button type="button" class="number">9</button>
+          <button type="button" class="operator" id="divide">/</button>
         </div>
         <div class="row2">
           <button type="button" class="number">4</button>
           <button type="button" class="number">5</button>
           <button type="button" class="number">6</button>
+          <button type="button" class="operator" id="multiply">*</button>
         </div>
         <div class="row3">
           <button type="button" class="number">1</button>
           <button type="button" class="number">2</button>
           <button type="button" class="number">3</button>
+          <button type="button" class="operator" id="subtract">-</button>
+        </div>
+        <div class="row4">
+          <button type="button" class="number">0</button>
+          <button type="button" class="clear">C</button>
+          <button type="button" class="equal">=</button>
+          <button type="button" class="operator" id="add">+</button>
         </div>
       </div>
     </div>

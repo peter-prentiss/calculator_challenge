@@ -8,7 +8,13 @@ $(document).ready(function() {
     console.log(button);
   })
   $('#equals').click(buildEquation);
-
+  $('#clear').click(clearValues);
+  $('#val1').on('focus', function() {
+    $('#val1').val("");
+  });
+  $('#val2').on('focus', function() {
+    $('#val2').val("");
+  });
 });
 
 function buildEquation() {
@@ -42,4 +48,10 @@ function answer() {
       $('#answer').text(response);
     }
   })
+}
+
+function clearValues() {
+  $('#val1').val(0);
+  $('#val2').val(0);
+  $('#answer').empty();
 }
