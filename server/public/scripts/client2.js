@@ -11,6 +11,10 @@ $(document).ready(() => {
     collectNumbers();
   });
 
+  $('#current-number').focus(() => $('#current-number').val(''));
+
+  $('#current-number').keyup(() => inputNumbers());
+
   $('.operator').click(function() {
     operator = $(this).attr('id');
     $('#current-number').val('');
@@ -21,21 +25,7 @@ $(document).ready(() => {
     clear();
   });
 
-  $('.equal').click(() => {
-    sendCalculation();
-  });
-
-  $('#current-number').keyup(() => {
-    if (!operator) {
-      firstValue = $('#current-number').val();
-      $('#current-number').val(firstValue);
-      console.log(firstValue);
-    } else {
-      secondValue = $('#current-number').val();
-      $('#current-number').val(secondValue);
-      console.log(secondValue);
-    }
-  });
+  $('.equal').click(() => sendCalculation());
 
 });
 //collects numbers and assigns them to values as buttons are pressed
@@ -45,6 +35,16 @@ function collectNumbers() {
     $('#current-number').val(firstValue);
   } else {
     secondValue += number;
+    $('#current-number').val(secondValue);
+  }
+}
+//reads input field and assigns values
+function inputNumbers() {
+  if (!operator) {
+    firstValue = $('#current-number').val();
+    $('#current-number').val(firstValue);
+  } else {
+    secondValue = $('#current-number').val();
     $('#current-number').val(secondValue);
   }
 }

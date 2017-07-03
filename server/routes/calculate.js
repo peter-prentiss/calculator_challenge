@@ -11,8 +11,6 @@ router.post('/', (req, res) => {
 });
 
 //sends back answer as string
-router.get('/', (req, res) => {
-  res.send(answer.toString());
-});
+router.get('/', (req, res) => res.send(answer.toString()));
 
 module.exports = router;
