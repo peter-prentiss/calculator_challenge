@@ -1,17 +1,17 @@
-let express = require('express');
-let app = express();
-let path = require('path');
-let port = 6969;
-let bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
+const path = require('path');
+const port = 6969;
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
-let calculateRouter = require('./routes/calculate.js');
+const calculateRouter = require('./routes/calculate.js');
 app.use('/calculate', calculateRouter);
 
-app.get('/*', function(req, res) {
+app.get('/*', (req, res) => {
   let file = req.params[0] || '/views/index.html';
   res.sendFile(path.join(__dirname, '/public', file));
 });
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log('Server running on port', port);
 });

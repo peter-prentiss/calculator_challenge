@@ -1,19 +1,18 @@
-let express = require('express');
-let router = express.Router();
-var equals = require('../modules/equalMachine.js');
+const express = require('express');
+const router = express.Router();
+const calculator = require('../modules/calculator.js');
 let answer;
 
-//sets values equal to properties of object,
-//performs logic to do equation
-router.post('/', function(req, res) {
-    let equation = req.body;
-    answer = equals(equation);
+//uses calculator module to define answer
+router.post('/', (req, res) => {
+  let equation = req.body;
+  answer = calculator(equation);
   res.sendStatus(200);
 });
 
 //sends back answer as string
-router.get('/', function(req, res) {
+router.get('/', (req, res) => {
   res.send(answer.toString());
-})
+});
 
 module.exports = router;

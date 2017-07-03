@@ -1,10 +1,10 @@
 let operator;
-let numArray = [];
-let numArray2 = [];
+let firstValue = '';
+let secondValue = '';
 let number;
 
 
-$(document).ready(function() {
+$(document).ready(() => {
   //sets up event handlers
   $('.number').click(function() {
     number = $(this).text();
@@ -16,36 +16,46 @@ $(document).ready(function() {
     $('#current-number').val('');
   });
 
-  $('.clear').click(function() {
+  $('.clear').click(() => {
     $('#current-number').val('0');
     clear();
   });
 
-  $('.equal').click(function() {
+  $('.equal').click(() => {
     sendCalculation();
+  });
+
+  $('#current-number').keyup(() => {
+    if (!operator) {
+      firstValue = $('#current-number').val();
+      $('#current-number').val(firstValue);
+      console.log(firstValue);
+    } else {
+      secondValue = $('#current-number').val();
+      $('#current-number').val(secondValue);
+      console.log(secondValue);
+    }
   });
 
 });
 //collects numbers and assigns them to values as buttons are pressed
 function collectNumbers() {
   if (!operator) {
-    numArray.push(number);
-    $('#current-number').val(numArray.join(''));
+    firstValue += number;
+    $('#current-number').val(firstValue);
   } else {
-    numArray2.push(number);
-    $('#current-number').val(numArray2.join(''));
+    secondValue += number;
+    $('#current-number').val(secondValue);
   }
 }
 //clears collected values
 function clear() {
-  numArray = [];
-  numArray2 = [];
+  firstValue = '';
+  secondValue = '';
   operator = null;
 }
 //sends collected values to server
 function sendCalculation() {
-  let firstValue = numArray.join('');
-  let secondValue = numArray2.join('');
   $('#current-number').val('calculating...');
   $.ajax({
     type: 'POST',
@@ -57,7 +67,7 @@ function sendCalculation() {
     },
     success: setTimeout(function(response) {
       answer();
-    }, 3000)
+    }, 300)
   });
 }
 //receives and displays calculated value from server
@@ -68,7 +78,7 @@ function answer() {
     success: function(response) {
       $('#current-number').val(response);
       clear();
-      numArray.push(response);
+      firstValue += response;
     }
   })
 }
